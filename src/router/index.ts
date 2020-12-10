@@ -40,6 +40,12 @@ const routes: Array<RouteConfig> = [
         props: true // 将路由路径中的参数映射到组件的props中
       },
       {
+        path: '/role/:roleId/alloc-resource',
+        name: 'alloc-resource',
+        component: () => import(/* webpackChunkName: 'role' */ '@/views/role/alloc-resource.vue'),
+        props: true // 将路由路径中的参数映射到组件的props中
+      },
+      {
         path: '/menu',
         name: 'menu',
         component: () => import(/* webpackChunkName: 'menu' */ '@/views/menu/index.vue'),
