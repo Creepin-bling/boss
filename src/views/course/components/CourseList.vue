@@ -70,6 +70,7 @@
 <script lang="ts">
   import { getQueryCourses, changeState } from '@/services/course'
   import Vue from 'vue'
+  import { Form } from 'element-ui'
   export default Vue.extend({
     name: 'CourseList',
 

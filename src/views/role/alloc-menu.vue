@@ -19,6 +19,7 @@
   import Vue from 'vue'
   import { getMenuNodeList, getRoleMenus } from '@/services/menu'
   import { setAllocateRole } from '@/services/roles'
+  import { Tree } from 'element-ui'
   export default Vue.extend({
     name: 'allocMenu',
     props: {
@@ -29,10 +30,12 @@
     },
 
     data() {
+      // const resourceIdList: Array<any> = []
+      const checkedKeys: Array<any> = [];
       return {
         menu: [],
         menus: [],
-        checkedKeys: [],
+        checkedKeys: checkedKeys,
         defaultProps: {
           children: 'subMenuList',
           label: 'name'
@@ -45,7 +48,7 @@
     },
     methods: {
       async loadGetNodeList() {
-        const { data } = await getMenuNodeList({})
+        const { data } = await getMenuNodeList()
         console.log(data)
         this.menus = data.data
         // this.getCheckedKeys(data.data)
@@ -73,7 +76,7 @@
 
       getCheckedKeys(menus: any) {
         menus.forEach((menu: any) => {
-          this.checkedKeys.push(menu.id as any)
+          this.checkedKeys.push(menu.id)
           // this.checkedKeys = [...this.checkedKeys, menus.id] as any
           if (menu.subMenuList) {
             this.getCheckedKeys(menu.subMenuList)

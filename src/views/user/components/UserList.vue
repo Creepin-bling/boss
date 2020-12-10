@@ -103,13 +103,13 @@
         this.UserPageList = data.data.records
         this.total = data.data.total
       },
-      handleSizeChange(val) {
+      handleSizeChange(val: any) {
         this.form.size = val
         this.form.current = 1
         this.loadGetUserInfo()
         console.log(`每页 ${val} 条`)
       },
-      handleCurrentChange(val) {
+      handleCurrentChange(val: any) {
         console.log(`当前页: ${val}`)
         this.form.current = val
         this.loadGetUserInfo()

@@ -58,11 +58,10 @@ export const getUserRole = (userId: string | number) => {
   })
 }
 
-export const getAllRoles = (data: any) => {
+export const getAllRoles = () => {
   return request({
     url: '/boss/role/all',
-    method: 'GET',
-    data
+    method: 'GET'
     // headers: { 'content-type': 'application/x-www-form-urlencoded' },
   })
 }

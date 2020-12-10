@@ -62,7 +62,7 @@
       this.loadGetLesson()
     },
     methods: {
-      handleNodeClick(data) {
+      handleNodeClick(data: any) {
         console.log(data)
       },
       async loadGetLesson() {

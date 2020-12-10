@@ -58,6 +58,7 @@
   import Vue from 'vue'
   // import dayjs from 'dayjs'
   import createOrEdit from './components/CreateOrEditRoles.vue'
+  import { Form } from 'element-ui'
   import { getRolePages, DelRolesInfo } from '@/services/roles'
 
   export default Vue.extend({

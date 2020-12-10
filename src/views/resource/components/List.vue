@@ -53,7 +53,7 @@
   import Vue from 'vue'
   // import dayjs from 'dayjs'
   import { GetAllCategoryPages, GetAllCategory } from '@/services/resource'
-
+  import { Form } from 'element-ui'
   export default Vue.extend({
     name: 'ResourceIndex',
     data() {
@@ -101,9 +101,7 @@
         // console.log(data)
       },
       async loadCategory() {
-        const { data } = await GetAllCategory({
-
-        })
+        const { data } = await GetAllCategory()
         console.log(data)
         this.CategoryList = data.data
       },
@@ -118,13 +116,13 @@
         this.form.current = 1
         this.LoadResourceList()
       },
-      handleSizeChange(val) {
+      handleSizeChange(val: any) {
         console.log(`每页 ${val} 条`)
         this.form.size = val
         this.form.current = 1
         this.LoadResourceList()
       },
-      handleCurrentChange(val) {
+      handleCurrentChange(val: any) {
         // console.log(`当前页: ${val}`)
         this.form.current = val
         this.LoadResourceList()

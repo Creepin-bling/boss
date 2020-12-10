@@ -48,6 +48,7 @@
 <script lang="ts">
   import Vue from 'vue'
   import { createMenu, getEditMenuInfo } from '@/services/menu'
+  import { Form } from 'element-ui'
   export default Vue.extend({
     name: 'menuCreate',
     props: {

@@ -17,13 +17,15 @@
 
 <script lang="ts">
   import Vue from 'vue'
+  import { Tree } from 'element-ui'
   import { allocateRoleResources, GetAllCategory, resourceAll, getRoleResources } from '@/services/resource'
   export default Vue.extend({
     name: 'allocResource',
     data() {
+      const resourceIdList: Array<any> = []
       return {
         resourceList: [],
-        resourceIdList: [],
+        resourceIdList: resourceIdList,
         userHave: [],
         defaultProps: {
           children: '',
@@ -56,9 +58,9 @@
         // console.log(this.userHave.id)
         this.getCheckedLists(data.data)
       },
-      getCheckedLists(Lists) {
+      getCheckedLists(Lists: any) {
         Lists.forEach((List: any) => {
-          List.resourceList.forEach((item) => {
+          List.resourceList.forEach((item: any) => {
             this.resourceIdList.push(item.id)
           })
         })
