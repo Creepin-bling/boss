@@ -1,15 +1,18 @@
 <template>
-  <div id="app">
-    <!-- 跟路由出口 -->
-    <router-view />
+  <div class="course-list">
+    <List />
   </div>
 </template>
 
 <script lang="ts">
   import Vue from 'vue'
+  import List from './components/CourseList.vue'
 
   export default Vue.extend({
-    name: 'App'
+    name: 'CourseIndex',
+    components: {
+      List
+    }
   })
 </script>
 
