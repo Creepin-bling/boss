@@ -31,7 +31,7 @@
 
     data() {
       // const resourceIdList: Array<any> = []
-      const checkedKeys: Array<any> = [];
+      const checkedKeys: Array<any> = []
       return {
         menu: [],
         menus: [],
